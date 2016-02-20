@@ -101,7 +101,7 @@ namespace Calculator
             switch (operationType)
             {
                 case "sqrt":
-                    secondNumber = Math.Sqrt(secondNumber);
+                    result = Math.Sqrt(secondNumber);
                     break;
                 case "%":
                     switch (operation)
