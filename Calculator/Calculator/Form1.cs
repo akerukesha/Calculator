@@ -125,6 +125,9 @@ namespace Calculator
                 case "1/x":
                     secondNumber = 1 / secondNumber;
                     break;
+                case "+/-":
+                    secondNumber = -(secondNumber);
+                    break;
             }
             display.Text = secondNumber.ToString();
             //убрать из памяти operation, secondNumber должен стать firstNumber

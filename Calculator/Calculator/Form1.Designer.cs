@@ -57,6 +57,7 @@
             this.operationMemoryClear = new System.Windows.Forms.Button();
             this.operationMemoryAdd = new System.Windows.Forms.Button();
             this.memory = new System.Windows.Forms.TextBox();
+            this.signChanger = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pad1
@@ -205,9 +206,9 @@
             // operationClear
             // 
             this.operationClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.operationClear.Location = new System.Drawing.Point(12, 50);
+            this.operationClear.Location = new System.Drawing.Point(82, 49);
             this.operationClear.Name = "operationClear";
-            this.operationClear.Size = new System.Drawing.Size(64, 40);
+            this.operationClear.Size = new System.Drawing.Size(48, 40);
             this.operationClear.TabIndex = 14;
             this.operationClear.Text = "C";
             this.operationClear.UseVisualStyleBackColor = true;
@@ -227,9 +228,9 @@
             // operationClearEntry
             // 
             this.operationClearEntry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.operationClearEntry.Location = new System.Drawing.Point(82, 50);
+            this.operationClearEntry.Location = new System.Drawing.Point(136, 49);
             this.operationClearEntry.Name = "operationClearEntry";
-            this.operationClearEntry.Size = new System.Drawing.Size(64, 40);
+            this.operationClearEntry.Size = new System.Drawing.Size(47, 40);
             this.operationClearEntry.TabIndex = 18;
             this.operationClearEntry.Text = "CE";
             this.operationClearEntry.UseVisualStyleBackColor = true;
@@ -270,9 +271,9 @@
             // buttonBack
             // 
             this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonBack.Location = new System.Drawing.Point(152, 50);
+            this.buttonBack.Location = new System.Drawing.Point(189, 49);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(64, 40);
+            this.buttonBack.Size = new System.Drawing.Size(47, 40);
             this.buttonBack.TabIndex = 22;
             this.buttonBack.Text = "Back";
             this.buttonBack.UseVisualStyleBackColor = true;
@@ -357,17 +358,29 @@
             // 
             // memory
             // 
-            this.memory.Location = new System.Drawing.Point(229, 50);
+            this.memory.Location = new System.Drawing.Point(12, 49);
             this.memory.Name = "memory";
             this.memory.Size = new System.Drawing.Size(53, 20);
             this.memory.TabIndex = 30;
             this.memory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // signChanger
+            // 
+            this.signChanger.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.signChanger.Location = new System.Drawing.Point(242, 49);
+            this.signChanger.Name = "signChanger";
+            this.signChanger.Size = new System.Drawing.Size(40, 40);
+            this.signChanger.TabIndex = 31;
+            this.signChanger.Text = "+/-";
+            this.signChanger.UseVisualStyleBackColor = true;
+            this.signChanger.Click += new System.EventHandler(this.operationResultSpecial_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(294, 285);
+            this.Controls.Add(this.signChanger);
             this.Controls.Add(this.memory);
             this.Controls.Add(this.operationMemoryStore);
             this.Controls.Add(this.operationMemoryRecall);
@@ -437,6 +450,7 @@
         private System.Windows.Forms.Button operationMemoryClear;
         private System.Windows.Forms.Button operationMemoryAdd;
         private System.Windows.Forms.TextBox memory;
+        private System.Windows.Forms.Button signChanger;
     }
 }
 
