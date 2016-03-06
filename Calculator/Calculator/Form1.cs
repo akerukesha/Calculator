@@ -64,9 +64,31 @@ namespace Calculator
         private void operation_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
+           
+            if (state == State.WaitingForResult)
+            {
+                secondNumber = double.Parse(display.Text);
+                switch (operation)
+                {
+                    case "+":
+                        result = firstNumber + secondNumber;
+                        break;
+                    case "-":
+                        result = firstNumber - secondNumber;
+                        break;
+                    case "/":
+                        result = firstNumber / secondNumber;
+                        break;
+                    case "*":
+                        result = firstNumber * secondNumber;
+                        break;
+                }
+                display.Text = result.ToString();
+                firstNumber = result;
+            }
+            operation = btn.Text;
             firstNumber = double.Parse(display.Text);
             state = State.WaitingForSecondNumber;
-            operation = btn.Text;
         }
 
         private void operationResult_Click(object sender, EventArgs e)
@@ -148,6 +170,7 @@ namespace Calculator
                     result = 0;
                     secondNumber = 0;
                     firstNumber = 0;
+                    state = State.WaitingForFirstNumber;
                     break;
                 case "CE":
                     display.Text = "0";
