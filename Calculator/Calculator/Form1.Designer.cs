@@ -276,6 +276,7 @@
             this.buttonBack.TabIndex = 22;
             this.buttonBack.Text = "Back";
             this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.operationClear_Click);
             // 
             // operationSqrt
             // 

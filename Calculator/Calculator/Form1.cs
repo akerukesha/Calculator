@@ -52,9 +52,9 @@ namespace Calculator
                     break;
             }
 
-            if (btn.Text == ".")
+            if (btn.Text == ",")
             {
-                if (!display.Text.Contains("."))
+                if (!display.Text.Contains(","))
                     display.Text += btn.Text;
             }
             else
@@ -101,9 +101,11 @@ namespace Calculator
             switch (operationType)
             {
                 case "sqrt":
-                    result = Math.Sqrt(secondNumber);
+                    secondNumber = Math.Sqrt(secondNumber);
                     break;
                 case "%":
+                    secondNumber = (firstNumber / 100.0) * secondNumber;
+                    /*
                     switch (operation)
                     {
                         case "+":
@@ -118,17 +120,17 @@ namespace Calculator
                         case "*":
                             result = (firstNumber / 100.0) * secondNumber;
                             break;
-                    }
+                    }*/
                     break;
                 case "1/x":
-                    result = 1 / secondNumber;
+                    secondNumber = 1 / secondNumber;
                     break;
             }
-            display.Text = result.ToString();
+            display.Text = secondNumber.ToString();
             //убрать из памяти operation, secondNumber должен стать firstNumber
             //недоработка
-            firstNumber = result;
-            state = State.WaitingForSecondNumber;
+            //firstNumber = secondNumber;
+            //state = State.WaitingForSecondNumber;
         }
 
         private void operationClear_Click(object sender, EventArgs e)
@@ -145,6 +147,9 @@ namespace Calculator
                     firstNumber = 0;
                     break;
                 case "CE":
+                    display.Text = "0";
+                    break;
+                case "Back":
                     display.Text = "0";
                     break;
             }
