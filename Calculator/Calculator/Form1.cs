@@ -58,7 +58,7 @@ namespace Calculator
                     display.Text += btn.Text;
             }
             else
-                display.Text += btn.Text;
+                display.Text += btn.Text;            
         }
 
         private void operation_Click(object sender, EventArgs e)
@@ -176,7 +176,10 @@ namespace Calculator
                     display.Text = "0";
                     break;
                 case "Back":
-                    display.Text = "0";
+                    if (display.Text.Length == 1)
+                        display.Text = "0";
+                    else
+                        display.Text = display.Text.Remove(display.Text.Length - 1);
                     break;
             }
         }
